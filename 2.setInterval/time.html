@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>
+      计时器示例
+    </title>
+  </head>
+  <body>
+    <input type="text" id="result"/>
+    <input type="button" id="start" value="开始" onclick="startTiming()"/>
+    <input type="button" id="stop" value="结束" onclick="stopTiming()"/>
+    
+  </body>
+  <script>
+      // write your code here
+      // ......
+    let displayTime = 0;
+	let setTiming;
+
+	function startTiming() {
+	  document.getElementById("result").value = displayTime;
+	  displayTime++;
+	  setTiming = setTimeout(startTiming, 1000);
+	}
+
+	function stopTiming() {
+	  if (setTiming) {
+	    clearTimeout(setTiming);
+	  }
+	  displayTime = 0;
+	}
+  </script>
+</html>
+  
